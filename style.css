@@ -34,6 +34,7 @@ body{
     font-weight: bold;
     color: white;
     margin-bottom: 25px;
+    cursor: pointer;
 }
 .sidebar .logo_content .logo_name span{
     color: yellow;
@@ -67,8 +68,8 @@ body{
 
 /* right form add map css*/
 .right_formMap{
-    width: 85%;
-    left: 16%;
+    width: 90%;
+    left: 10%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -84,7 +85,7 @@ body{
     padding: 20px;
 }
 .header_nav h2{
-    margin-right: 80%;
+    margin-right: 76%;
     font-size: 22px;
 }
 /* css ul for head_nav */
