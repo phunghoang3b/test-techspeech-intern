@@ -13,6 +13,7 @@ body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: rgb(228, 222, 222);
 }
 /* sidebar css */
 .sidebar{
@@ -20,7 +21,7 @@ body{
     top: 20px;
     background: #343232;
     height: 100%;
-    width: 240px;
+    width: 260px;
     left: 20px;
     padding: 6px 35px;
     border-top-left-radius: 25px;
@@ -55,7 +56,58 @@ body{
 }
 .sidebar ul li a:hover{
     color: yellow;
+    background: #6C6969;
+    padding: 5px;
+    border-radius: 10px;
+    opacity: 1;
 }
 .sidebar ul li a i{
     font-size: 20px;
+}
+
+/* right form add map css*/
+.right_formMap{
+    width: 85%;
+    left: 16%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.header_nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.header_nav h2{
+    margin-right: 80%;
+    font-size: 22px;
+}
+/* css ul for head_nav */
+.header_nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_nav ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+.header_nav ul li a{
+    text-decoration: none;
+    color: #343232;
+}
+.header_nav ul li a i{
+    font-size: 25px;
+}
+.header_nav ul li a img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 0.5px solid yellow;
 }
