@@ -127,12 +127,88 @@ section{
     margin-top: -10%;
 }
 .map-container{
-    max-width: 850px;
-    margin: auto;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     overflow: hidden;
+    height: inherit;
 }
 /* css for form input*/
+.form-container{
+    padding: 25px;
+}
+.form-container h3{
+    font-size: 15px;
+    color: #aaa7a7;
+    margin-bottom: 20px;
+    margin-left: 54%;
+}
+.form-container .address-form{
+    width: 100%;
+}
+.form-container .address-form .input_field{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+.form-container .address-form .input_field label{
+    width: 190px;
+    font-weight: 600;
+}
+.form-container .address-form .input_field .input,
+.form-container .address-form .input_field .textarea{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.form-container .address-form .input_field .textarea{
+    padding-bottom: 35px;
+    resize: none;
+}
+.form-container .address-form .input_field .input::placeholder,
+.form-container .address-form .input_field .textarea::placeholder{
+    opacity: 0.5;
+}
+.form-container .address-form .input_field .custom_select{
+    position: relative;
+    width: 100%;
+}
+.form-container .address-form .input_field .custom_select select{
+    border: none;
+    width: 100%;
+    padding: 5px;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #ddd9d9;
+}
+.form-container .address-form .input_field .input:focus,
+.form-container .address-form .input_field .textarea:focus,
+.form-container .address-form .input_field select:focus{
+    border: 1px solid yellow;
+}
+.form-container .address-form .input_field .radiobtn{
+    display: inline-block;
+    margin-left: 8%;
+    position: relative;
+}
+.form-container .address-form .input_field .radio{
+    margin-left: 80px;
+}
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: yellow;
+    content: '✓';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    font-weight: bold;
+}
