@@ -214,7 +214,7 @@ input[type='radio']:checked:after {
 }
 
 /* css for map */
-.map h3{
+.right-map h3{
     font-size: 15px;
     color: #aaa7a7;
     margin-bottom: 20px;
@@ -222,7 +222,7 @@ input[type='radio']:checked:after {
     text-align: center;
     position: relative;
 }
-.map iframe{
+.right-map iframe{
     width: 95%;
     height: 80%;
     border-radius: 10px;
