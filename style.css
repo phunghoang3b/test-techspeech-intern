@@ -232,6 +232,7 @@ input[type='radio']:checked:after {
 .button-map{
     position: absolute;
     margin-top: 32%;
+    margin-right: 30px;
 }
 .button-map button{
     width: 140px;
@@ -249,20 +250,6 @@ input[type='radio']:checked:after {
 }
 
 /* responsive for page map */
-@media screen and (min-width: 780px){
-    .right_formMap .header_nav h2{
-        margin-right: 40%;
-    }
-    section{
-        width: 70%;
-        position: relative;
-        margin-left: 20%;
-    }
-    .form-container h3{
-        margin-left: 25%;
-    }
-    .button-map{
-        margin-top: 72%;
-        margin-left: 18%;
-    }
+@media screen and (max-width: 779px){
+
 }
