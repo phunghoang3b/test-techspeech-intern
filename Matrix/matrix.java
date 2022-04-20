@@ -1,12 +1,16 @@
-public class Test {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+public class matrix {
 
     private final int[][] arr;
 
-    private Test(int[][] arr) {
+    private matrix(int[][] arr) {
         this.arr = arr;
     }
 
-    private Test(int row, int col, int min, int max) {
+    private matrix(int row, int col, int min, int max) {
         this.arr = gen(row, col, min, max);
     }
 
@@ -14,8 +18,10 @@ public class Test {
         int[][] res = new int[row][col];
         List<Integer> flat = new ArrayList<>();
         int total = row*col;
+        Random r = new Random();
         for (int i = 0; i < total; i++) {
-            flat.add(MathUtils.random(min, max));
+            int result = r.nextInt(max-min) + min;
+            flat.add(result);
         }
         Collections.shuffle(flat);
         for (int i = 0; i < flat.size(); i++)
@@ -126,7 +132,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test test = new Test(4, 5, 0, 5);
+        matrix test = new matrix(5, 4, -1, 9);
         test.showArr();
         test.showMax();
     }
