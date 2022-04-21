@@ -2,19 +2,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-public class matrix {
 
+public class MATRIX{
     private final int[][] arr;
 
-    private matrix(int[][] arr) {
+    public MATRIX(int[][] arr) {
         this.arr = arr;
     }
 
-    private matrix(int row, int col, int min, int max) {
-        this.arr = gen(row, col, min, max);
+    private MATRIX(int row, int col, int min, int max) {
+        this.arr = GenMaTrix(row, col, min, max);
     }
 
-    private int[][] gen(int row, int col, int min, int max) {
+    private int[][] GenMaTrix(int row, int col, int min, int max) {
         int[][] res = new int[row][col];
         List<Integer> flat = new ArrayList<>();
         int total = row*col;
@@ -29,11 +29,11 @@ public class matrix {
         return res;
     }
 
-    private int maxTotalCheck(){
-        int totalR = totalRow(maxRow());
-        int totalC = totalCol(maxCol());
-        int totalD1 = arr.length == arr[0].length ? totalCheoChinh() : 0;
-        int totalD2 = arr.length == arr[0].length ? totalCheoPhu() : 0;
+    private int KiemTraTongMax(){
+        int totalR = TongDong(MaxDong());
+        int totalC = TongCot(MaxCot());
+        int totalD1 = arr.length == arr[0].length ? TongCheoChinh() : 0;
+        int totalD2 = arr.length == arr[0].length ? TongCheoPhu() : 0;
 
         if (totalR > totalC && totalR > totalD1 && totalR > totalD2) return 1;
         if (totalC > totalR && totalC > totalD1 && totalC > totalD2) return 2;
@@ -41,11 +41,11 @@ public class matrix {
         return 4;
     }
 
-    private int maxRow(){
+    private int MaxDong(){
         int max = 0;
         int row = 0;
         for (int rowStep = 0; rowStep < arr.length; rowStep++){
-            int totalRow = totalRow(rowStep);
+            int totalRow = TongDong(rowStep);
             if (totalRow > max) {
                 row = rowStep;
                 max = totalRow;
@@ -54,11 +54,11 @@ public class matrix {
         return row;
     }
 
-    private int maxCol(){
+    private int MaxCot(){
         int max = 0;
         int col = 0;
         for (int colStep = 0; colStep < arr[0].length; colStep++){
-            int totalCol = totalCol(colStep);
+            int totalCol = TongCot(colStep);
             if (totalCol > max) {
                 max = totalCol;
                 col = colStep;
@@ -67,23 +67,7 @@ public class matrix {
         return col;
     }
 
-    private int totalCheoChinh(){
-        int total = 0;
-        for (int i = 0; i < arr.length; i++){
-            total += arr[i][i];
-        }
-        return total;
-    }
-
-    private int totalCheoPhu(){
-        int total = 0;
-        for (int i = 0; i < arr.length; i++){
-            total += arr[i][arr.length - 1 - i];
-        }
-        return total;
-    }
-
-    private int totalRow(int row){
+    private int TongDong(int row){
         int total = 0;
         for (int colStep = 0; colStep < arr[0].length; colStep++){
             total += arr[row][colStep];
@@ -91,7 +75,7 @@ public class matrix {
         return total;
     }
 
-    private int totalCol(int col){
+    private int TongCot(int col){
         int total = 0;
         for (int rowStep = 0; rowStep < arr.length; rowStep++){
             total += arr[rowStep][col];
@@ -99,7 +83,23 @@ public class matrix {
         return total;
     }
 
-    private void showArr(){
+    private int TongCheoChinh(){
+        int total = 0;
+        for (int i = 0; i < arr.length; i++){
+            total += arr[i][i];
+        }
+        return total;
+    }
+
+    private int TongCheoPhu(){
+        int total = 0;
+        for (int i = 0; i < arr.length; i++){
+            total += arr[i][arr.length - 1 - i];
+        }
+        return total;
+    }
+
+    private void HienThiMang(){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
                 System.out.print(arr[i][j] + ",");
@@ -108,17 +108,17 @@ public class matrix {
         }
     }
 
-    private void showMax(){
-        int check = maxTotalCheck();
-        System.out.println("Chuoi lon nhat la: ");
+    private void HienThiMax(){
+        int check = KiemTraTongMax();
+        System.out.println("Chuoi Ket Qua Co Tong Lon Nhat La: ");
         if (check == 1){
             for (int i = 0; i < arr[0].length; i++) {
-                System.out.print(arr[maxRow()][i] + ",");
+                System.out.print(arr[MaxDong()][i] + ",");
             }
         }
         else if (check == 2){
             for (int i = 0; i < arr.length; i++) {
-                System.out.print(arr[i][maxCol()] + ",");
+                System.out.print(arr[i][MaxCot()] + ",");
             }
         }else if (check == 3){
             for (int i = 0; i < arr.length; i++) {
@@ -132,8 +132,8 @@ public class matrix {
     }
 
     public static void main(String[] args) {
-        matrix test = new matrix(5, 4, -1, 9);
-        test.showArr();
-        test.showMax();
+        MATRIX test = new MATRIX(5, 5, -2, 8);
+        test.HienThiMang();
+        test.HienThiMax();
     }
 }
